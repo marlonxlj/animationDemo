@@ -145,6 +145,21 @@ CAMediaTimingFunction:比UIViewAnimationCurve更强大
 ```
 
 ###fileModel
+```
+- (void)testChangeColor
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    animation.fromValue = (id)[UIColor yellowColor].CGColor;
+    animation.toValue = (id)[UIColor orangeColor].CGColor;
+    animation.duration = 2;
+    animation.beginTime = [_myLayer convertTime:CACurrentMediaTime() fromLayer:nil] + 1;
+    animation.fillMode = kCAFillModeBoth;
+    animation.removedOnCompletion = NO;
+    [_myLayer addAnimation:animation forKey:@"backgroundColor"];
+    
+    
+}
+```
 
 
 
